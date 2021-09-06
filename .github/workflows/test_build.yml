@@ -17,7 +17,7 @@ jobs:
           mkdir build
           cd build
           cmake ../src \
-          -DNetCDF_Fortran_LIBRARY=$$(nf-config --prefix)/lib/libnetcdff.so \
-          -DNetCDF_INCLUDE_DIRS=$$(nc-config --includedir) \
-          -DNetCDF_C_LIBRARY=$$(nc-config --prefix)/lib/libnetcdf.so
-          make -j$$(nproc)
+          -DNetCDF_Fortran_LIBRARY=$(nf-config --prefix)/lib/libnetcdff.so \
+          -DNetCDF_INCLUDE_DIRS=$(nc-config --includedir) \
+          -DNetCDF_C_LIBRARY=$(nc-config --prefix)/lib/libnetcdf.so
+          make -j$(nproc)
