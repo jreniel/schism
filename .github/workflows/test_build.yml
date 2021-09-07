@@ -11,13 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install netCDF4 library on Linux
-        run: sudo apt-get update -y && sudo apt-get install -y libnetcdf-dev libnetcdff-dev cmake openmpi-bin libopenmpi-dev g++ python
+        run: sudo apt-get update -y && sudo apt-get install -y libnetcdf-dev libnetcdff-dev cmake openmpi-bin libopenmpi-dev g++-10 python
       - name: Compile SCHISM
         shell: bash
         env:
-          CC:   gcc-4
-          CXX:  g++-4
-          FC: gfortran-4
+          CC:   gcc-10
+          CXX:  g++-10
         run: |
           mkdir build
           cd build
