@@ -15,9 +15,9 @@ jobs:
       - name: Compile SCHISM
         shell: bash
         env:
-        CC:   gcc-4
-        CXX:  g++-4
-        FC: gfortran-4
+          CC:   gcc-4
+          CXX:  g++-4
+          FC: gfortran-4
         run: |
           mkdir build
           cd build
