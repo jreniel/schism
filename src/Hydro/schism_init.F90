@@ -706,7 +706,7 @@
       endif
 
 !     Wind (use nws=2 and USE_ATMOS for coupling directly to atmos model)
-      if(nws<-1.or.nws>6.or.nws==3) then
+      if(nws<-1.or.nws>7.or.nws==3) then
         write(errmsg,*)'Unknown nws',nws
         call parallel_abort(errmsg)
       endif
@@ -745,12 +745,13 @@
       endif
       if(isconsv/=0.and.ihconsv==0) call parallel_abort('Evap/precip model must be used with heat exchnage model')
 !'
-      if(ihconsv/=0.and.(nws<2.or.nws>3)) call parallel_abort('Heat budge model must have nws>=2')
+      if(ihconsv/=0.and..not.(nws==2.or.nws==3.or.nws==7)) call parallel_abort('Heat budget model requires nws to be between 2, 3 or 7')
+
 
 #ifdef USE_BULK_FAIRALL
-      if(ihconsv/=0.and.nws==2.and.myrank==0) write(16,*)'Turb. Fluxes: Fairall et al.(03)'
+      if(ihconsv/=0.and.(nws==2.or.nws==7).and.myrank==0) write(16,*)'Turb. Fluxes: Fairall et al.(03)'
 #else
-      if(ihconsv/=0.and.nws==2.and.myrank==0) write(16,*)'Turb. Fluxes: Zeng et al.(98)'
+      if(ihconsv/=0.and.(nws==2.or.nws==7).and.myrank==0) write(16,*)'Turb. Fluxes: Zeng et al.(98)'
 #endif
 
 #ifdef USE_ATMOS
@@ -1398,7 +1399,7 @@
           & uthnd(nvrt,mnond_global,nope_global),vthnd(nvrt,mnond_global,nope_global), &
           & eta_mean(npa),trth(ntracers,nvrt,mnond_global,max(1,nope_global)),stat=istat)
 !           iet1lg(nope),ifl1lg(nope),ite1lg(nope),isa1lg(nope),stat=istat)
-      if(istat/=0) call parallel_abort('MAIN: 1st bnd forcings allocation failure')            
+      if(istat/=0) call parallel_abort('MAIN: 1st bnd forcings allocation failure')
 !'
 
 !     All other arrays
@@ -3184,7 +3185,7 @@
       endif !ncor
 
 !     Wind 
-      if(nws==-1.or.nws==2) then !read in hgrid.ll and open debug outputs
+      if(nws==-1.or.nws==2.or.nws==7) then !read in hgrid.ll and open debug outputs
         if(myrank==0) then
           open(32,file=in_dir(1:len_in_dir)//'hgrid.ll',status='old')
           read(32,*)
@@ -3220,7 +3221,8 @@
       endif !nws
 
 !...  Wind rotation angle input
-      if(nws==2) then
+      ! if(nws==2.or.nws==7) then
+      if(nws==2)then
         if(myrank==0) then
           open(32,file=in_dir(1:len_in_dir)//'windrot_geo2proj.gr3',status='old')
           read(32,*)
@@ -3299,7 +3301,7 @@
           if(ipgl(i)%rank==myrank) albedo(ipgl(i)%id)=buf3(i) !tmp
         enddo !i
 
-!       Read in water type; the values for R, d_1, d_2 are given below 
+!       Read in water type; the values for R, d_1, d_2 are given below
 !       solar flux= R*exp(z/d_1))+(1-R)*exp(z/d_2) (d_[1,2] are attentuation depths; smaller values for muddier water)
 !       1: 0.58 0.35 23 (Jerlov type I)
 !       2: 0.62 0.60 20 (Jerlov type IA)
@@ -4777,8 +4779,8 @@
       call initialize_biology
 
 !     Reads atmospheric parameters (!MFR - must use nws=2)
-      if(nws/=2) then
-        call parallel_abort('EcoSim must use nws=2')
+      if(nws/=2.or.nws/=7) then
+        call parallel_abort('EcoSim must use nws=2 or nws=7')
 !      else !nws=0
 !        open(31,file=in_dir(1:len_in_dir)//'atmos.in', status='old')
 !        if(myrank==0) write(16,*) 'Reading atmospheric parameters from atmos.in...'

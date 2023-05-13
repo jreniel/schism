@@ -713,7 +713,7 @@
       call sed_init
 #endif /*USE_SED*/
 
-!     Initialize time series for hydraulic structures that use them, including 
+!     Initialize time series for hydraulic structures that use them, including
 !     opening files and "fast forwarding" to the restart time
       if(ihydraulics/=0.and.nhtblocks>0) then
         call init_struct_time_series(time)
@@ -831,9 +831,11 @@
 !...  Initialize heat budget model - this needs to be called after nodalvel as
 !     (uu2,vv2) are needed
 !     For USE_ATMOS, sflux etc are init'ed as 0 in _init
-      if(ihconsv/=0.and.nws==2) then
-        call surf_fluxes(wtime1,windx1,windy1,pr1,airt1,shum1, &
-     &srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
+      if(ihconsv/=0.and.(nws==2.or.nws==7)) then
+          if (nws==2) then
+
+            call surf_fluxes(wtime1,windx1,windy1,pr1,airt1,shum1, &
+            &srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
 #ifdef PREC_EVAP
      &                   fluxprc,fluxevp, prec_snow, &
 #endif
@@ -844,6 +846,18 @@
 !       hradd: downwelling infrared (longwave) radiative fluxes at surface (W/m^2)
 !       srad: solar radiation (W/m^2)
 !       tauxz,tauyz: wind stress (in true E-N direction if ics=2)
+
+
+        else if (nws==7) then
+            call parallel_abort('heat budget model not implemented yet for nws=7')
+            ! call surf_fluxes_ug(wtime1,windx1,windy1,pr1,airt1,shum1, &
+            ! &srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
+! #ifdef PREC_EVAP
+     ! &                   fluxprc,fluxevp, prec_snow, &
+! #endif
+     ! &                   nws)
+    end if ! nws 2 or 7
+
 !$OMP parallel do default(shared) private(i)
         do i=1,npa
           sflux(i)=-fluxsu(i)-fluxlu(i)-(hradu(i)-hradd(i)) !junk at dry nodes

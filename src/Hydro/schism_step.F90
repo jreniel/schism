@@ -583,18 +583,28 @@
 #endif
 
 !     CORIE mode
-      if(nws==2) then
+      if(nws==2.or.nws==7) then
         if(time>=wtime2) then
 !...      Heat budget & wind stresses
           if(ihconsv/=0) then
 #ifndef     USE_ATMOS
             call surf_fluxes(wtime2,windx2,windy2,pr2,airt2, &
-     &shum2,srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
+     &rhum2,srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
 #ifdef PREC_EVAP
      &                       fluxprc,fluxevp,prec_snow, &
 #endif
      &                       nws ) 
 #endif /*USE_ATMOS*/
+            if(nws==7) then
+            ! TODO:
+            call parallel_abort('heat budget not implemented for nws=7')
+            ! call surf_fluxes(wtime2,windx2,windy2,pr2,airt2, &
+        ! &shum2,srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
+! #ifdef PREC_EVAP
+     ! &                       fluxprc,fluxevp,prec_snow, &
+! #endif
+     ! &                       nws )
+            endif ! nws=7
 
 !$OMP parallel default(shared) private(i,j)
 !$OMP       do
@@ -651,6 +661,7 @@
             shum1(i)=shum2(i)
           enddo
 !$OMP end parallel do
+<<<<<<< Updated upstream
 
 #ifdef    USE_ATMOS
           !ESMF may not extend to ghosts
@@ -658,7 +669,8 @@
           call exchange_p2d(windy2)
           call exchange_p2d(pr2)
 #else
-          call get_wind(wtime2,windx2,windy2,pr2,airt2,shum2)
+          if(nws==2) call get_wind(wtime2,windx2,windy2,pr2,airt2,shum2)
+          if(nws==7) call get_wind_ug(wtime2,windx2,windy2,pr2,airt2,shum2)
 #endif
         endif !time>=wtime2
 
