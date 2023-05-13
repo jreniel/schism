@@ -589,7 +589,7 @@
           if(ihconsv/=0) then
 #ifndef     USE_ATMOS
             call surf_fluxes(wtime2,windx2,windy2,pr2,airt2, &
-     &rhum2,srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
+     &shum2,srad,fluxsu,fluxlu,hradu,hradd,tauxz,tauyz, &
 #ifdef PREC_EVAP
      &                       fluxprc,fluxevp,prec_snow, &
 #endif
