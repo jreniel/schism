@@ -661,7 +661,6 @@
             shum1(i)=shum2(i)
           enddo
 !$OMP end parallel do
-<<<<<<< Updated upstream
 
 #ifdef    USE_ATMOS
           !ESMF may not extend to ghosts
