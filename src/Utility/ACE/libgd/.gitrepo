@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/libgd/libgd.git
+	branch = master
+	commit = 83498bbe1781bda6d122e9e3a1705116728224fb
+	parent = 60e67b71a8e26796e5f0e529e1da5e9c559c8423
+	method = merge
+	cmdver = 0.4.5
