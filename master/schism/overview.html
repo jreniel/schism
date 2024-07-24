@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.3.4">
     
     
       
@@ -386,12 +386,87 @@
       
       
         <label class="md-nav__link" for="__nav_3_8">
+          Preprocessing with pylib
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Preprocessing with pylib" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Preprocessing with pylib
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/installation.html" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/schismcheck.html" class="md-nav__link">
+        schismCheck (input visualization)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
           Preprocessing with PySCHISM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Preprocessing with PySCHISM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_9">
           <span class="md-nav__icon md-icon"></span>
           Preprocessing with PySCHISM
         </label>
@@ -431,8 +506,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pyschism/bctides.html" class="md-nav__link">
+        Tides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getting-started/pre-processing-with-pyschism/boundary.html" class="md-nav__link">
-        Boundary Conditions
+        B.C. from HYCOM
       </a>
     </li>
   
@@ -1504,7 +1593,7 @@ so should be read carefully, in consultation with appropriate sections in the 2 
 Since SCHISM is quite a sophisticated package, we strongly recommend you start from the simple 
 <a href="../getting-started/test_suite.html">test cases</a> and gradually progress toward more complex 3D baroclinic or coupled applications.</p>
 <h1 id="notation-used-in-this-manual">Notation used in this manual<a class="headerlink" href="#notation-used-in-this-manual" title="Permanent link">&para;</a></h1>
-<p>We will use bold characters to denote vectors and matrices, and unbold characters to denote scalars in mathematical equations. In addition, superscripts usually denote time step and subscripts denote spatial locations. E.g., <span class="arithmatex">\(T_{i,k}^{n+1}\)</span> may mean the temperature at step <span class="arithmatex">\(n+1\)</span> (i.e., new time step) and prism <span class="arithmatex">\((i,k)\)</span>, where <span class="arithmatex">\(i\)</span> is the element number and <span class="arithmatex">\(k\)</span> is the (whole) vertical index. We will use inline code blocks to denote input file names (e.g. <code>param.nml</code>), purple words to denote output file names (e.g. mirror.out), and green words to denote parameters specified in param.nml; e.g. nchi (the bottom friction option flag). Code/pseudo-code fragments are written in <code>code-blocks</code>. </p>
+<p>We will use bold characters to denote vectors and matrices, and unbold characters to denote scalars in mathematical equations. In addition, superscripts usually denote time step and subscripts denote spatial locations. E.g., <span class="arithmatex">\(T_{i,k}^{n+1}\)</span> may mean the temperature at step <span class="arithmatex">\(n+1\)</span> (i.e., new time step) and prism <span class="arithmatex">\((i,k)\)</span>, where <span class="arithmatex">\(i\)</span> is the element number and <span class="arithmatex">\(k\)</span> is the (whole) vertical index. We will use inline code blocks to denote input file names (e.g. <code>param.nml</code>) or code/pseudo-code fragments. </p>
 <p>Below are some notations used in this manual:</p>
 <p><span class="arithmatex">\(N_p\)</span>: number of nodes</p>
 <p><span class="arithmatex">\(N_s\)</span>: number of sides</p>
@@ -1518,6 +1607,10 @@ Since SCHISM is quite a sophisticated package, we strongly recommend you start f
 <p><span class="arithmatex">\(A\)</span>: area of an element</p>
 <p><span class="arithmatex">\(\Delta z\)</span>: layer thickness (at a node, side or elem.)</p>
 <p><span class="arithmatex">\(\delta_{ij}\)</span>: Kronecker Delta function (<span class="arithmatex">\(=1\)</span> when <span class="arithmatex">\(i=j\)</span>; <span class="arithmatex">\(0\)</span> otherwise)</p>
+<h1 id="other-resources-for-beginners">Other resources for beginners<a class="headerlink" href="#other-resources-for-beginners" title="Permanent link">&para;</a></h1>
+<p>Over the years various user groups have come up with their own documentations
+ to help SCHISM beginners, and you may find them helpful. For example, CA Dept of Water
+ Resources group maintained a (<a href="https://cadwrdeltamodeling.github.io/HelloSCHISM/index.html">Hello SCHISM site</a>).</p>
 
               
             </article>

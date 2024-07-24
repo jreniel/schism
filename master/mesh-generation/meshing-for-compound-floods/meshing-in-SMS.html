@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.3.4">
     
     
       
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#preparation" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -374,12 +374,87 @@
       
       
         <label class="md-nav__link" for="__nav_3_8">
+          Preprocessing with pylib
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Preprocessing with pylib" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Preprocessing with pylib
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/pre-processing-with-pylib/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/pre-processing-with-pylib/installation.html" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/pre-processing-with-pylib/schismcheck.html" class="md-nav__link">
+        schismCheck (input visualization)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
           Preprocessing with PySCHISM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Preprocessing with PySCHISM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_9">
           <span class="md-nav__icon md-icon"></span>
           Preprocessing with PySCHISM
         </label>
@@ -419,8 +494,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../../getting-started/pre-processing-with-pyschism/bctides.html" class="md-nav__link">
+        Tides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../getting-started/pre-processing-with-pyschism/boundary.html" class="md-nav__link">
-        Boundary Conditions
+        B.C. from HYCOM
       </a>
     </li>
   
@@ -1017,81 +1106,12 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Meshing in SMS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="meshing-in-SMS.html" class="md-nav__link md-nav__link--active">
         Meshing in SMS
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preparation" class="md-nav__link">
-    Preparation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clean-the-merged-map" class="md-nav__link">
-    Clean the merged map
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-polygons" class="md-nav__link">
-    Build polygons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-watershed-resolution" class="md-nav__link">
-    Set watershed resolution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-and-avoid-sms-issues" class="md-nav__link">
-    Find and avoid SMS issues
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finalize-the-mesh" class="md-nav__link">
-    Finalize the mesh
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mesh-quality-and-skew-elements" class="md-nav__link">
-    Mesh quality and skew elements
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1566,81 +1586,268 @@
 
 
 
-  <h1>Meshing in SMS</h1>
-
-<h2 id="preparation"><strong>Preparation</strong><a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>Typically, you should have the following items in an SMS project:</p>
-<p><img alt="SMS project" src="../../assets/mesh-sms-proj.png" /> </p>
-<p>For a complex meshing project, it is imperative to keep different features in seperate maps.
-Merging individual maps should be done as the last step.</p>
-<p>The purpose of each SMS project component is as follows:</p>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>Here we provide three sample projects to illustrate the procedure of meshing for compound flood simulations.
+These examples use SMS to merge the automatic arcs with existing manual arcs and generate the final mesh.
+The projects are organized in order of increasing complexity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The main purpose is to illustrate the necessary steps to get a clean map coverage for meshing, and you're welcome to employ any tools or methods that suit your preference.
+The key is to organize different map features (such as coastal water bodies, watershed rivers, hydraulic structures) in individual SMS map coverages and merge them properly to avoid unwanted intersections.</p>
+</div>
+<p><br></p>
+<h1 id="calcasieu-lake">Calcasieu Lake<a class="headerlink" href="#calcasieu-lake" title="Permanent link">&para;</a></h1>
+<p>The first example illustrates how you may extend an existing coastal model mesh to include higher-grounds and small rivers in the watershed.</p>
+<p><strong>Step 1. Start from an existing map coverage.</strong></p>
+<p>Assume you have a manually made SMS map for a traditional coastal simulation like this:</p>
+<p><a href="../../assets/calcasieu_lake_coasal_map.jpg">
+<img src="../../assets/calcasieu_lake_coasal_map.jpg" alt="drawing" width="500"/>
+</a></p>
+<p>The spatial domain (orange color) covers everything below the sea level in the study area.</p>
+<p><strong>Step 2. Include more upland areas of interest:</strong></p>
+<p>Define a boundary that delineates the landward limit of the new domain of interest, for example:</p>
+<p><a href="../../assets/calcasieu_lake_lbnd.jpg">
+<img src="../../assets/calcasieu_lake_lbnd.jpg" alt="drawing" width="500"/>
+</a></p>
+<p><strong>Step 3. Clip the automatic arcs so that they are only present in the areas of interest.</strong></p>
+<p>Typically, we want to put the automatic arcs (watershed rivers) only in the extended region.
+This can be done in various ways, e.g., using GIS tools or scripts.</p>
+<p>For this simple project, using SMS or GIS tools is straightforward,
+and here is an example using the clipping tool (similar to that in ArcGIS or QGIS) inside SMS:</p>
 <ul>
 <li>
-<p>Scatter Data:</p>
-<ul>
-<li>
-<p>station: Mark locations where mesh quality is important; at least make sure none of the observational stations is in land cells.</p>
+<p>Duplicate the full domain map coverage (from Step 2) and name it as "extended"</p>
 </li>
 <li>
-<p><a name="watershed_resolution">watershed resolution</a>: Used for setting "scalar density paving" on some polygons, see details <a href="">here</a>.</p>
+<p>Select the polygon that corresponds to the extended region, remove other polygons by invert selection and delete:</p>
 </li>
 </ul>
-</li>
-<li>
-<p>Map Data:</p>
+<p><a href="../../assets/calcasieu_lake_extende_region.jpg">
+<img src="../../assets/calcasieu_lake_extende_region.jpg" alt="drawing" width="800"/>
+</a></p>
+<ul>
+<li>Use the clipping tool in the toolbox, and clip the automatic arcs inside the extended region.</li>
+</ul>
+<p><a href="../../assets/calcasieu_lake_clip.jpg">
+<img src="../../assets/calcasieu_lake_clip.jpg" alt="drawing" width="1200"/>
+</a></p>
+<ul>
+<li>The results look like:</li>
+</ul>
+<p><a href="../../assets/calcasieu_lake_clipped_arcs.jpg">
+<img src="../../assets/calcasieu_lake_clipped_arcs.jpg" alt="drawing" width="500"/>
+</a></p>
+<p><strong>Step 4. Merge the clipped automatic arcs and generate the mesh.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to set a uniform mesh resolution in the extended region,
+you should do it before merging, because the polygon of the extended region will be split into many parts afterwards,
+making it labor intensive to set attributes for them manually.</p>
+</div>
+<p>Set the element size as:</p>
+<p><a href="../../assets/calcasieu_lake_set_size.jpg">
+<img src="../../assets/calcasieu_lake_set_size.jpg" alt="drawing" width="900"/>
+</a></p>
+<p>After merging, you should clean the final coverage and build polygons again.
+The element size set in the extended region will be inherited (as of SMS 13.3.5)
+even though it has been split into many parts by river arcs:</p>
+<p><a href="../../assets/calcasieu_lake_final_map.jpg">
+<img src="../../assets/calcasieu_lake_final_map.jpg" alt="drawing" width="500"/>
+</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes a few parts split from the original extended region may not inherit the polygon attributes
+and default to "paving", in this case you may need to manually set the polygon attributes or design another
+map coverage to facilitate the selection.
+This is elaborated <a href="#set-watershed-resolution">below</a>.</p>
+</div>
+<p>And here is the final mesh:</p>
+<p><a href="../../assets/calcasieu_lake_mesh.jpg">
+<img src="../../assets/calcasieu_lake_mesh.jpg" alt="drawing" width="600"/>
+</a></p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h1 id="coastal-areas-in-texas">Coastal areas in Texas<a class="headerlink" href="#coastal-areas-in-texas" title="Permanent link">&para;</a></h1>
+<p>This example is similar to the first one, but the existing map is more complex.</p>
+<p><strong>Step 1. Start from an existing map coverage.</strong></p>
+<p>This manual map consists of many polygons and some of them are islands (empty polygons, not meshed).</p>
+<p><a href="../../assets/Texas.jpg">
+<img src="../../assets/Texas.jpg" alt="drawing" width="1200"/>
+</a></p>
+<p><strong>Step 2. Include more upland areas of interest:</strong></p>
 <ul>
 <li>
-<p><a name="select">select*</a>: A map containing a polygon that intersects with all polygons where the "scalar density paving" attribute is needed, see details <a href="">here</a>.
-            This is useful when the number of watershed polygons is too large to select manually.
-            The polygon can be made in Qgis by first extracting the grid boundary then simplifying its geometry (otherwise the polygon is too complex for efficient selection of intersecting features).</p>
+<p>Include islands of interest.
+For example, the yellow polygons in the figure above are islands, which have a mesh type of "None".
+Set them to "Paving" so that they will be meshed.
+If many islands need to be set to "paving" in the existing map coverage, you can directly edit the *.map file and replace all occurrences of the string "NOMESH" to "PAVE 0.3".</p>
 </li>
 <li>
-<p>lbnd: land boundary roughly along the 10-m contour, see <a href="">caveats of making the land boundary</a>.</p>
+<p>Define a boundary that delineates the landward limit of the new domain, for example:</p>
+</li>
+</ul>
+<p><a href="../../assets/TX_land_boundary.jpg">
+<img src="../../assets/TX_land_boundary.jpg" alt="drawing" width="500"/>
+</a></p>
+<p><strong>Step 3. Clip the automatic arcs so that they are only present in the areas of interest.</strong></p>
+<p>Similar to the first example, the extended region is the difference between the newly defined full domain
+and the original domain (which also includes any islands of interest):</p>
+<p><a href="../../assets/TX_extended_region.jpg">
+<img src="../../assets/TX_extended_region.jpg" alt="drawing" width="600"/>
+</a></p>
+<p>The clipped arcs look like:</p>
+<p><a href="../../assets/TX_clipped_arcs.jpg">
+<img src="../../assets/TX_clipped_arcs.jpg" alt="drawing" width="600"/>
+</a></p>
+<p>Depending on your needs, you may want the automatic arcs to intersect with the existing arcs (set buffer=0 in this case) or
+leave a buffer distance between the two groups of arcs.
+We typically don't let automatic arcs intersect with existing arcs, but this requires some further considerations (see <a href="#strategy-for-editing-the-coastal-coverage">below</a>) to ensure channel connectivity.</p>
+<p>Here, we provide an example using Python scripting:</p>
+<ul>
+<li>Merge the newly defined the land boundary with the existing coverage:</li>
+</ul>
+<p><img alt="Merge land boundary" src="../../assets/TX-merge-ocean-land.jpg" /></p>
+<p>, clean the merged coverage and rebuild polygons in SMS.</p>
+<ul>
+<li>
+<p>Save the original coverage and the merged coverage (full domain) as polygon shapefiles.</p>
 </li>
 <li>
-<p>*levee*: Levees from National Levee Database.</p>
+<p>Use the Python script below to clip the automatic arcs:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># ------------------------- inputs ---------------------------</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">wdir</span> <span class="o">=</span> <span class="s1">&#39;/sciclone/schism10/Hgrid_projects/GoM/&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">original</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wdir</span><span class="si">}</span><span class="s1">/original.shp&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">full_domain</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wdir</span><span class="si">}</span><span class="s1">/full.shp&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">islands</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wdir</span><span class="si">}</span><span class="s1">/islands.shp&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">buffer_distance</span> <span class="o">=</span> <span class="mf">50e-5</span>   <span class="c1"># set to 0 if no buffer is needed</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># ------------------------- end inputs ---------------------------</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># buffer the original domain so that the clipped arcs don&#39;t intersect with the original domain</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">original_buf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">original</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">buffer_distance</span><span class="p">))</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># the extended region is the &quot;watershed&quot; region where the auto arcs are placed</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">extended_region</span> <span class="o">=</span> <span class="n">full_domain</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n">original_buf</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;difference&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dissolve</span><span class="p">()</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># add any islands back</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">islands_buf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">islands</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="o">-</span><span class="n">buffer_distance</span><span class="p">))</span>  <span class="c1"># &quot;minus&quot; because we want the river arcs contained in the islands</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">extended_region</span> <span class="o">=</span> <span class="n">extended_region</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">islands_buf</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># clip the auto arcs to the extended region</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">total_arcs</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wdir</span><span class="si">}</span><span class="s1">/total_arcs.shp&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">total_arcs_clipped</span> <span class="o">=</span> <span class="n">total_arcs</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">extended_region</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">total_arcs_clipped</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">wdir</span><span class="si">}</span><span class="s1">/total_arcs_clipped.shp&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>The usage of this simple script is self-evident and you can use it as a starting point for your own project.
+Scripting is recommended for more complex projects with many individual map coverages.</p>
+<p><strong>Step 4. Merge the clipped automatic arcs and generate the mesh.</strong></p>
+<p>See details in the SECOFS example.</p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h1 id="secofs-south-east-coastal-forecast-system">SECOFS (South-east Coastal Forecast System)<a class="headerlink" href="#secofs-south-east-coastal-forecast-system" title="Permanent link">&para;</a></h1>
+<p>This example is based on the SECOFS domain.</p>
+<p><a href="../../assets/SECOFS_domain.jpg">
+<img src="../../assets/SECOFS_domain.jpg" alt="drawing" width="500"/>
+</a></p>
+<p>This project has an additional component in the map module, i.e., the levee and dam system from the National Levee Database.
+In a more complex project like this one,
+it is recommended to use a script to clip the automatic arcs inside the extended (watershed) region.
+The SCHISM Git repo provides a clipping script for SECOFS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$your_schism_dir</span>/src/Utility/Pre-Processing/SECOFS/Grid/clip_autoarcs.py
+</code></pre></div>
+<p>This script is similar to the one shown in the Texas example above, but it has more steps.</p>
+<p>The rest of the procedures of automatic arcs preperation is similar to what have been shown in the previous examples and not repeated here.</p>
+<h2 id="preparation"><strong>Preparation</strong><a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<p>The SECOFS SMS project has the following components:</p>
+<p><img alt="SMS project" src="../../assets/sms-project.jpg" /> </p>
+<p>For a complex meshing project, it is imperative to keep different features in seperate maps.
+Merging individual maps should be done as the last step.</p>
+<p>In this project, the purpose of each SMS map coverage is as follows:</p>
+<ul>
+<li>
+<p>lbnd: land boundary roughly along the 10-m contour.</p>
 </li>
 <li>
-<p>auto*arcs: Automatically generated river arcs.</p>
+<p>levee*: Levees from National Levee Database.</p>
+</li>
+<li>
+<p>auto*arcs: Automatically generated river arcs, clipped inside the watershed region (see <a href="https://vims0-my.sharepoint.com/personal/feiye_vims_edu/_layouts/OneNote.aspx?id=%2Fpersonal%2Ffeiye_vims_edu%2FDocuments%2FNotebooks%2FNOAA%20TWL%20project%E2%80%8B&amp;wd=target%28Highlights.one%7C9F3230A1-12F7-4F9A-8890-CE493995252A%2FSMS%20notes%7C95E15132-42B8-4581-A263-4F4576C9A5FE%2F%29onenote:https://vims0-my.sharepoint.com/personal/feiye_vims_edu/Documents/Notebooks/NOAA%20TWL%20project​/Highlights.one#SMS%20notes&amp;section-id={9F3230A1-12F7-4F9A-8890-CE493995252A}&amp;page-id={95E15132-42B8-4581-A263-4F4576C9A5FE}&amp;end">clipping the river
+  arcs</a>)</p>
 </li>
 <li>
 <p>coast: This map includes all manually made polygons (including quad patches) and the coastline.</p>
 </li>
 <li>
-<p>ocean: This map includes everything beyond the coastline and in the ocean.</p>
-</li>
-<li>
-<p><a name="divide">divide</a>: A few manually drawn arcs that divide the coastal regions into subregions.
-          This makes the mesh generation of complex maps more robust in SMS.
-          This is also useful for locating SMS issues because you can mesh different subregions in seperate SMS sessions simultaneously, which speeds up the diagnosis of SMS exceptions (crashing or hanging) that may occur for a complex map, see details <a href="#find-and-fix-sms-issues">below</a>.</p>
-</li>
-<li>
 <p>merge coverge: Merged map of all individual maps above.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Gis Data:</p>
-<ul>
-<li>World imagery and NWM segments: These provide a guidance on watershed and river topography, which helps avoid meshing errors during the desgin phase (e.g., when editing the <a href="">land boundary</a>)  </li>
-</ul>
 </li>
 </ul>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Never edit the merged map directly, unless you are willing to take the time to exactly reproduce the changes in all individual maps (which is more time consuming in most cases, so don't do it).
-Unsyncing the merged map with the individual maps make it practically impossible for any significant changes in the future.
-The only case in which editing the merged map may be beneficial is when you work on a huge map (with tens of thousands of arcs) and cleaning the merged map takes much time (e.g. hours).
-In this case, make sure the changes are also reproduced in individual maps.</p>
+<p>Never edit the merged map directly, unless you are willing to take the time to exactly reproduce the changes in all individual maps (which is more time consuming in most cases, so don't do it).</p>
+<p>For a complex project, breaking the consistency between the merged map and the individual maps makes it practically impossible for any significant changes in the future.</p>
 </div>
 <h2 id="clean-the-merged-map"><strong>Clean the merged map</strong><a class="headerlink" href="#clean-the-merged-map" title="Permanent link">&para;</a></h2>
-<p>Clean the merged map twice with the following parameters: </p>
-<p><img alt="Clean SMS map" src="../../assets/mesh-clean-map.png" /></p>
-<p>Two cleans are needed because the second clean will snap some of the newly created points during the first clean.</p>
+<p>Since SMS 13.3, the cleaning is very efficient even for a map with tens of thousands of arcs. However, you may need to clean the merged map multiple times until there is no more warning messages.
+For STOFS3D or SECOFS, use with the following parameters: </p>
+<p><img alt="Clean SMS map" src="../../assets/mesh-clean-map.jpg" /></p>
 <h2 id="build-polygons"><strong>Build polygons</strong><a class="headerlink" href="#build-polygons" title="Permanent link">&para;</a></h2>
 <p><img alt="Build polygons" src="../../assets/mesh-build-polygons.png" /></p>
-<h2 id="set-watershed-resolution"><strong>Set watershed resolution</strong><a class="headerlink" href="#set-watershed-resolution" title="Permanent link">&para;</a></h2>
-<p>To avoid over-refinement, most watershed polygons should have a specified mesh resolution, which can be set via the "scalar paving density" option in each polygon's attributes.</p>
+<p>Make sure there is no warning message after the polygons are built; otherwise, go back to the cleaning step and try again.</p>
+<h2 id="finalize-the-mesh"><strong>Finalize the mesh</strong><a class="headerlink" href="#finalize-the-mesh" title="Permanent link">&para;</a></h2>
+<p>Delete the disjoint nodes:</p>
+<p><img alt="disjoint nodes" src="../../assets/mesh-disjoint-nodes.png" /></p>
+<p>Renumber nodes:</p>
+<p><img alt="renumber nodes" src="../../assets/mesh-renumber-nodes.png" /></p>
+<p>Save the mesh as *.2dm:</p>
+<p><img alt="renumber nodes" src="../../assets/mesh-save.png" /></p>
+<h2 id="mesh-quality-and-skew-elements">** Mesh quality and skew elements **<a class="headerlink" href="#mesh-quality-and-skew-elements" title="Permanent link">&para;</a></h2>
+<p>Although the script tries to optimize the convergence of river arcs at river intersections
+, skew elements may occasionally occur.
+<img alt="river-intersections" src="../../assets/mesh-intersections.jpg" /></p>
+<p>Normally these small 'bad' elements do not affect the efficiency or stability of SCHISM simulations. 
+However, it's advisable to edit out extremely small/skew elements.
+You may remedy them using the following script provided in <a href="https://github.com/schism-dev/RiverMeshTools/tree/main/RiverMapper">RiverMapper</a>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>RiverMeshTools/RiverMapper/RiverMapper/improve_hgrid.py
+</code></pre></div>
+The script automatically checks for small and skew elements,
+then improve the mesh by merging, removing, or relaxing the problematic elements.
+As a general rule of thumb, SCHISM can comfortably handle elements &gt;= <span class="arithmatex">\(1m^2\)</span> (<span class="arithmatex">\(10^{-10}\)</span> in lon/lat), and skewness&lt;=60. 
+You can specify these parameters in the script; see the "<strong>main</strong>" section of the script for usage.</p>
+<p>Alternatively, you can use <code>ACE/xmgredit5</code> or SMS to check and fix mesh quality manually.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Avoid overly depending on mesh adjustments in the final stage, as the underlying issue often originates from the SMS coverages or the merging process.
+In these instances, it is best to address the problems directly within the SMS coverages.</p>
+</div>
+<h1 id="additional-notes-for-stofssecofs-developers"><strong>Additional notes for STOFS/SECOFS developers</strong><a class="headerlink" href="#additional-notes-for-stofssecofs-developers" title="Permanent link">&para;</a></h1>
+<p>These notes are primarily intended as a reference for developers, although other users might also find parts of the content beneficial.</p>
+<h2 id="strategy-for-editing-the-coastal-coverage">Strategy for editing the coastal coverage<a class="headerlink" href="#strategy-for-editing-the-coastal-coverage" title="Permanent link">&para;</a></h2>
+<p>Edit the coastal coverage when local refinements are needed in an area of interest.</p>
+<p>Rules to follow (for consistency among STOFS3D/SECOFS developers):</p>
+<ul>
+<li>The manual arcs should at least be better than the auto arcs; use the shapefile of the auto arcs as a background in SMS to help you decide.
+  In particular, this means you need to accommodate for tributaries when placing a manual polygon for a main channel, lake, or estuary:</li>
+</ul>
+<p><img src="../../assets/accommodate_trib.jpg" alt="drawing" width="700"/></p>
+<ul>
+<li>No need to create buffers for manual polygons; the <a href="https://vims0-my.sharepoint.com/personal/feiye_vims_edu/_layouts/OneNote.aspx?id=%2Fpersonal%2Ffeiye_vims_edu%2FDocuments%2FNotebooks%2FNOAA%20TWL%20project%E2%80%8B&amp;wd=target%28Highlights.one%7C9F3230A1-12F7-4F9A-8890-CE493995252A%2FSMS%20notes%7C95E15132-42B8-4581-A263-4F4576C9A5FE%2F%29onenote:https://vims0-my.sharepoint.com/personal/feiye_vims_edu/Documents/Notebooks/NOAA%20TWL%20project​/Highlights.one#SMS%20notes&amp;section-id={9F3230A1-12F7-4F9A-8890-CE493995252A}&amp;page-id={95E15132-42B8-4581-A263-4F4576C9A5FE}&amp;end">clipping procedure</a> automatically creates a 50-meter buffer zone around all manual polygons.</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Arcs not included in a polygon do not have a buffer; this setting is intentional.</p>
+</div>
+<ul>
+<li>Unless you have a clear plan, don't mix features from other coverages (e.g., levees and auto arcs) in the coastal coverage, which is reserved for manual editing.
+Doing so means that you assume the responsiblity of keeping the manual edits up-to-date with external changes that may be more easily done in other coverages.
+For example, the National Levee Database add/remove features from time to time; the requirements on the auto arcs may change or there may be improvements in the RiverMapper tool itself.
+In addition, putting auto arcs in this coverage means that you will spend extra time trying to satisfy the first rule of explicitly accommodating for the connectivity with tributaries.</li>
+</ul>
+<h2 id="set-watershed-resolution">Set watershed resolution<a class="headerlink" href="#set-watershed-resolution" title="Permanent link">&para;</a></h2>
+<p>To avoid over-refinement, most watershed polygons should have a specified mesh resolution, which can be set via the "constant paving" or "scalar paving density" option in each polygon's attributes.</p>
 <p>Selecting the watershed polygons may involve much labor because many small polygons are generated after the river arcs are merged into the final map.
 Instead of manual selection, use the <a href="#select">"select*" map coverage</a> to select all polygons more efficiently.</p>
 <p>Activate the "select*" coverage:</p>
@@ -1649,66 +1856,19 @@ Instead of manual selection, use the <a href="#select">"select*" map coverage</a
 <p><img alt="Intersect_polygons" src="../../assets/mesh-intersect-polygons.png" /></p>
 <p>Intersect it with "merge coverage" with the following parameters:</p>
 <p><img alt="Intersect-parameters" src="../../assets/mesh-intersect-parameters.png" /></p>
-<p>It will take about 10 minutes to do the selection for the STOFS3D domain.
-Right click on the selected polygons and set "mesh type" in "polygon attributes" to scalar paving density: </p>
+<p>It will take about 10 minutes to do the selection for the STOFS3D domain.</p>
+<ul>
+<li>For STOFS3D, right click on the selected polygons and set "mesh type" in "polygon attributes" to scalar paving density: </li>
+</ul>
 <p><img alt="Scalar paving" src="../../assets/mesh-scalar-paving.png" /></p>
 <p>Set scalar options using the <a href="#watershed_resolution">watershed_resolution</a> scatter dataset from the <a href="#preparation">preparation</a> step:</p>
 <p><img alt="Scalar options" src="../../assets/mesh-scalar-options.png" /></p>
 <p>In addition, set the polygon attribute of the "island" between Chesapeake Bay and Delaware Bay as "None":</p>
 <p><img alt="Polygon None" src="../../assets/mesh-none.png" /></p>
-<h2 id="find-and-avoid-sms-issues"><strong>Find and avoid SMS issues</strong><a class="headerlink" href="#find-and-avoid-sms-issues" title="Permanent link">&para;</a></h2>
-<p>There are some known issues in SMS that may hang or crash a large scale mesh project
-(e.g., the US east coast and Gulf coast domain of STOFS-3D-Atlantic; smaller domains with 1 or 2 states have less problems).
-We have reported them to the SMS team and most of them will be fixed when the next SMS version is released.</p>
-<p>The issues include:</p>
 <ul>
-<li>SMS may hang while generating mesh for a complex polygon.
-Breaking the large polygon into smaller and simpler polygons can help fix the issue.</li>
+<li>For SECOFS, "Constant paving" with the following parameters is used:</li>
 </ul>
-<p><img alt="intersect joints" src="../../assets/mesh-sms-hang.png" /></p>
-<ul>
-<li>"Void in breakline" in some polygons. Slightly moving some vertices may fix the problem.</li>
-</ul>
-<p><img alt="intersect joints" src="../../assets/mesh-breakline-issue.png" /></p>
-<p>If SMS hangs, copy down the polygon ID (found in the lower-left corner) and restart the session. 
- Note that occasionally the real problematic polygon may be the next one from 'ID'.</p>
-<p>Before these issues are officially fixed, you may consider the following steps (Using STOFS3D Atlantic as an example)
-to find and avoid them before the final meshing.</p>
-<p>Option 1 (More manual work but takes less time):</p>
-<p>Break the merged map into sub-maps along the <a href="#divide">division lines</a>.
-Make sure there are no overlaps among the sub-maps except for the interface line:</p>
-<p><img alt="sub-map" src="../../assets/mesh-sub-map.png" /></p>
-<p>Mesh each sub-map in a seperate SMS session and fix issues when they occur using the methods discussed earlier,
-then combine the sub-meshes in SMS or using the following script in <a href="">SCHISM Git</a>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$your_schism_dir/schism/src/Utility/Grid_Scripts/mergegrid5.f90
-</code></pre></div></p>
-<p>Option 2 (Less manual work but takes more time):</p>
-<p>In each SMS session, select the polygons within a sub-domain and try to generate a sub-domain mesh with the selected polygons only.
-Normally, there won't be any "hanging" issues, but there can be 5 - 8 "breakline" issues in total and SMS will prompt for the IDs of the problematic polygons.
-Open another SMS session and fix all issues in the merged map.
-Here, editing the merged map is unavoidable because the issues originates from the merging step.
-Finally, generate the mesh for the full domain.
-This takes about 3-5 hours, depending on how fast your desktop is.</p>
-<h2 id="finalize-the-mesh"><strong>Finalize the mesh</strong><a class="headerlink" href="#finalize-the-mesh" title="Permanent link">&para;</a></h2>
-<p>Delete the disjoint nodes:</p>
-<p><img alt="disjoint nodes" src="../../assets/mesh-disjoint-nodes.png" /></p>
-<p>Renumber nodes:</p>
-<p><img alt="renumber nodes" src="../../assets/mesh-renumber-nodes.png" /></p>
-<p>Save the mesh as *.2dm:</p>
-<p><img alt="renumber nodes" src="../../assets/mesh-save.png" /></p>
-<h2 id="mesh-quality-and-skew-elements"><strong> Mesh quality and skew elements </strong><a class="headerlink" href="#mesh-quality-and-skew-elements" title="Permanent link">&para;</a></h2>
-<p>Although the script tries to optimize the convergence of river arcs at river intersections
-, skew elements may occasionally occur.
-<img alt="river-intersections" src="../../assets/mesh-intersections.png" /></p>
-<p>Normally these small 'bad' elements do not affect the efficiency or stability of SCHISM simulations. 
-However, it's advisable to edit out very small/skew elements.
-You may remedy them using the following script provided in <a href="">SCHISM Git</a>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$your_schism_dir/schism/src/Utility/Grid_Scripts/Compound_flooding/RiverMapper/RiverMapper/improve_hgrid.py
-</code></pre></div>
-The script automatically checks for very small and skew elements,
-then improve the mesh either by removing the problematic elements or local relaxation.</p>
-<p>As a general rule of thumb, SCHISM can comfortably handle elements &gt;= <span class="arithmatex">\(1m^2\)</span> (<span class="arithmatex">\(10^{-10}\)</span> in lon/lat), and skewness&lt;=60. 
-Use <code>ACE/xmgredit5</code> or SMS to check these. Most of those extreme elements are due to SMS map issues so you should fix them there.</p>
+<p><img alt="const_paving" src="../../assets/const_paving.jpg" /></p>
 
               
             </article>

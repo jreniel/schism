@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.3.4">
     
     
       
@@ -369,12 +369,87 @@
       
       
         <label class="md-nav__link" for="__nav_3_8">
+          Preprocessing with pylib
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Preprocessing with pylib" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Preprocessing with pylib
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/installation.html" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pylib/schismcheck.html" class="md-nav__link">
+        schismCheck (input visualization)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
           Preprocessing with PySCHISM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Preprocessing with PySCHISM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_9">
           <span class="md-nav__icon md-icon"></span>
           Preprocessing with PySCHISM
         </label>
@@ -414,8 +489,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../getting-started/pre-processing-with-pyschism/bctides.html" class="md-nav__link">
+        Tides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getting-started/pre-processing-with-pyschism/boundary.html" class="md-nav__link">
-        Boundary Conditions
+        B.C. from HYCOM
       </a>
     </li>
   
@@ -1490,7 +1579,7 @@
 
   <h1>AGE</h1>
 
-<p>AGE module is different from other tracer modules in that it works with even number of tracers, with the 1st half being the age tracer concentration and the 2nd half being the corresponding ‘ages’ (Shen and Haas 2004). The code hardwires the I.C. flag for this module to be ‘1’, i.e. horizontally variable conditions for all tracers specified in <code>AGE_hvar_*.ic</code>. Inside each <code>.ic</code> for the 2nd half of tracers, set a uniform 0 at all nodes. For tracers in the 1st half, the user specifies the age concentration to be either 0 or 1, the latter in specific regions where the age tracers will be continuously injected into the domain. For this reason, we suggest setting all B.C. flags for this module to be ‘0’ in <code>bctides.nml</code>.</p>
+<p>AGE module is different from other tracer modules in that it works with even number of tracers, with the 1st half being the age tracer concentration and the 2nd half being the corresponding ‘ages’ (Shen and Haas 2004). The code hardwires the I.C. flag for this module to be ‘1’, i.e. horizontally variable conditions for all tracers specified in <code>AGE_hvar_*.ic</code>. Inside each <code>.ic</code> for the 2nd half of tracers, set a uniform 0 at all nodes. For tracers in the 1st half, the user specifies the age concentration to be either 0 or 1, the latter in specific regions where the age tracers will be continuously injected into the domain. For this reason, we suggest setting all B.C. flags for this module to be ‘0’ in <code>bctides.in</code>.</p>
 <p>The vertical positions where the age tracers are injected are specified in <code>param.nml</code> in the array <code>level_age(1: ntracer_age/2)</code>; e.g. for <code>ntracer_age=4</code>, we may specify: <code>level_age = 9, -999</code> to inject the 1st age tracer at level 9, and the 2nd tracer at all levels (and the code will reset the tracer concentrations to 1 at the same ‘injection’ elements and level(s) at each time step). The output flags for the water ‘age’ in days are specified for half of the total number; e.g., <code>iof_age(1:2)=1, 0</code>.</p>
 
               

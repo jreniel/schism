@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.3.4">
     
     
       
@@ -420,12 +420,87 @@
       
       
         <label class="md-nav__link" for="__nav_3_8">
+          Preprocessing with pylib
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Preprocessing with pylib" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Preprocessing with pylib
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pre-processing-with-pylib/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pre-processing-with-pylib/installation.html" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pre-processing-with-pylib/schismcheck.html" class="md-nav__link">
+        schismCheck (input visualization)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9">
           Preprocessing with PySCHISM
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Preprocessing with PySCHISM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_9">
           <span class="md-nav__icon md-icon"></span>
           Preprocessing with PySCHISM
         </label>
@@ -465,8 +540,22 @@
   
   
     <li class="md-nav__item">
+      <a href="pre-processing-with-pyschism/bctides.html" class="md-nav__link">
+        Tides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="pre-processing-with-pyschism/boundary.html" class="md-nav__link">
-        Boundary Conditions
+        B.C. from HYCOM
       </a>
     </li>
   
@@ -1566,7 +1655,7 @@ ignore it and proceed in making. The final name of executable has the cluster na
 <p>The cmake utility is a very powerful way of building the source code and utility script bundle. The main cmake files are found in cmake/. You’ll need two essential files in this directory.</p>
 <ol>
 <li><code>SCHISM.local.build</code>: used to toggle on/off optional modules (similar to include_modules used in make).
- <code>TVD_LIM</code> should always have a valid value, but all other 'modules' are usually turned off for pure hydrodynamic 
+ <code>TVD_LIM</code> should always have a valid value, and BLD_STANDALONE should be ON (to build SCHISM alone; OFF is for building SCHISM as a UFS/ESMF component). All other 'modules' are usually turned off for pure hydrodynamic 
   applications. 
   <code>NO_PARMETIS</code>: you can bypass ParMETIS lib by providing instead a domain partitioning map (<code>partition.prop</code>
   which is identical to the output from ParMETIS <code>global_to_local.prop</code>) at runtime. 
