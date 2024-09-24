@@ -6,7 +6,7 @@
 # Copyright 1990-2003 Oregon Health and Science University
 # All Rights Reserved
 #
-# 
+#
 
 # $Id: Makefile,v 1.11 2007/03/13 15:34:15 pturner Exp $
 #
@@ -30,9 +30,9 @@ INSTALLDIR = /usr/local/ace
 
 # LINUX and Cygwin
 #LIBS = -L/usr/local/ace/lib -L/usr/local/lib -lgd -lfpp ../elio/libelio.a -L/usr/X11R6/lib64   -lXm -lXp -lXt -lXext -lXpm -lX11 -lICE -lSM -lm
-LIBS = -L../lib -lgd -lfpp -lelio -L/usr/X11R6/lib64 -lXm -lXp -lXt -lXext -lXpm -lX11 -lICE -lSM -lm
+LIBS = -L$(HOME)/.local/lib -L../lib -lgd -lfpp -lelio -L/usr/X11R6/lib64 -lXm -lXp -lXt -lXext -lXpm -lX11 -lICE -lSM -lm
 #Chaged to local include
-INCLUDES = -I/usr/X11R6/include -I../include #-I/usr/local/include
+INCLUDES = -I/usr/X11R6/include -I../include -I$(HOME)/.local/include
 
 # for Linux on Alpha for reading binary date written on Intel
 CFLAGS = -g -O $(INCLUDES) -mieee

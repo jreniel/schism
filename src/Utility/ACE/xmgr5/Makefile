@@ -30,12 +30,12 @@ HELPVIEWER = -DGR_HELPVIEWER='"netscape"'
 # netcdf, pgsql
 #LIBS = -L/usr/X11R6/lib -L/usr/local/ace/lib -lfpp -L/usr/local/pgsql/lib -lpq -lgd -lXm -lXt -lXp -lXext -lX11 -lICE -lSM -lICE -dynamic -lXmu -ldl -lm
 #LIBS = -L/usr/X11R6/lib64 -L/usr/local/ace/lib -lfpp -L/usr/local/pgsql/lib -lpq -L/usr/local/lib -lgd -lXm -lXt -lXp -lXext -lX11 -lICE -lSM -lICE -dynamic -lXmu -ldl -lm
-LIBS = -L/usr/X11R6/lib64 -L../lib -L/usr/local/intel64/broadwell/gcc/pgsql-10.2-1/lib -L/usr/local/lib -lfpp -lgd -lXm -lXt -lXext -lX11 -lICE -lSM -lICE -dynamic -lXmu -ldl -lm
+LIBS = -L$(HOME)/.local/lib -L/usr/X11R6/lib64 -L../lib -L/usr/local/intel64/broadwell/gcc/pgsql-10.2-1/lib -L/usr/local/lib -lfpp -lgd -lXm -lXt -lXext -lX11 -lICE -lSM -lICE -dynamic -lXmu -ldl -lm
 #LIBS = -L/usr/X11R6/lib -L/usr/local/ace/lib -lfpp -L/usr/local/pgsql/lib -lpq -L/usr/local/lib -lgd -lXm -lXt -lXp -lXext -lX11 -lICE -lSM -lICE -dynamic -lXmu -ldl -lm
 #INCLUDES = -I/usr/X11R6/include -I/usr/local/ace/include
 #INCLUDES = -I/usr/X11R6/include -I/usr/local/ace/netcdf/include -I/usr/local/ace/include
 # netcdf, pgsql
-INCLUDES = -I/usr/X11R6/include -I..//include -I/usr/local/intel64/broadwell/gcc/pgsql-10.2-1/include -I/usr/local/include
+INCLUDES = -I$(HOME)/.local/include -I/usr/X11R6/include -I..//include -I/usr/local/intel64/broadwell/gcc/pgsql-10.2-1/include -I/usr/local/include
 ##INCLUDES = -I/usr/X11R6/include -I/usr/local/ace/include -I/usr/local/intel64/broadwell/gcc/pgsql-10.2-1/include -I/usr/local/include
 CC = gcc -g
 # Compile in support for postgres.
@@ -64,11 +64,11 @@ CC = gcc -g
 #
 #
 # To install the default hardcopy device uncomment ONE of the
-# following (HARDCOPYDEV lines), the hardcopy device can also 
+# following (HARDCOPYDEV lines), the hardcopy device can also
 # be set using environment variables, and on the command line:
 #
 # PostScript landscape [device number 1]
-HARDCOPYDEV = -DHDEV=GR_PS_L 
+HARDCOPYDEV = -DHDEV=GR_PS_L
 
 # Step 5.
 
@@ -81,9 +81,9 @@ HARDCOPYDEV = -DHDEV=GR_PS_L
 # NOTE: if you use lp (as on Solaris 2.x, IRIX, and other System V systems),
 #       add the -c option or xmgr will erase the temporary file
 #       before lp can spool it -> "lp -c "
-# 
+#
 # For Postscript
-# 
+#
 PS_PRSTR = -DPS_PRSTR='"lp -c "'
 
 # Step 6.
@@ -91,11 +91,11 @@ PS_PRSTR = -DPS_PRSTR='"lp -c "'
 # Xmgr uses 4 scratch arrays, designated in the function that
 # interprets expressions as a, b, c, and d. MAXARR is the amount
 # of memory that will be allocated for these arrays and at present
-# there is no provision for dynamically extending the length of these 
+# there is no provision for dynamically extending the length of these
 # arrays. This sets a limit on the length of a set inasmuch
-# as no operation between sets and the scratch arrays should exceed 
-# this amount. MAXARR does NOT set a limit on the size of a set, on our 
-# Sun4 (32Mb) we run MAXARR = 60000, I've plotted data sets in excess 
+# as no operation between sets and the scratch arrays should exceed
+# this amount. MAXARR does NOT set a limit on the size of a set, on our
+# Sun4 (32Mb) we run MAXARR = 60000, I've plotted data sets in excess
 # of 700k points.
 #
 MAXARR = -DMAXARR=60000
@@ -270,7 +270,7 @@ xmgr5: $(OBJS)
 	$(CC) $(OBJS) -o xmgr5 $(NETCDFLIBS) $(XBAE_LIBS) $(LIBS)
 
 local: $(OBJS) viswin.o visutils.o
-	$(CC) $(OBJS) viswin.o visutils.o -o xmgr5 $(NETCDFLIBS) $(LIBS) 
+	$(CC) $(OBJS) viswin.o visutils.o -o xmgr5 $(NETCDFLIBS) $(LIBS)
 
 pars.o: pars.c
 pars.c: pars.y
@@ -285,7 +285,7 @@ install:
 lint:
 	lint  $(INCLUDES) $(SRCS)
 
-clean: 
+clean:
 	/bin/rm xmgr5 $(OBJS)
 
 distrib:

@@ -16,8 +16,9 @@ INSTALLDIR = /usr/local/ace
 
 ############################################
 # LINUX
-LIBS = -L/usr/X11R6/lib64 -L/opt/local/lib -lXm -lXp -lXt -lXext -lXpm -lX11 -lICE -lSM -lm
-INCLUDES = -I/usr/X11R6/include  -I/opt/local/include
+LIBS = -L/usr/X11R6/lib64 -L/opt/local/lib -L$(HOME)/.local/lib -lXm -lXp -lXt -lXext -lXpm -lX11 -lICE -lSM -lm
+INCLUDES = -I/usr/X11R6/include  -I/opt/local/include -I$(HOME)/.local/include
+
 CC = gcc -g
 
 #################
@@ -204,14 +205,14 @@ print: Makefile $(SRCS) $(INCS) $(PARSSRCS)
 	a2ps $? | lpr -h
 	touch print
 
-distrib: 
+distrib:
 	-/bin/rm -rf xmgredit5-dist
 	mkdir xmgredit5-dist
 	/bin/cp -p Makefile vers.h newvers.sh version gredit_icon.h $(SRCS) $(INCS) $(PARSSRCS) xmgredit5-dist
 	tar cvf xmgredit5.tar xmgredit5-dist
 	gzip xmgredit5.tar
 
-tarfile: 
+tarfile:
 	tar cvf xmgredit5.tar xmgredit5
 	gzip xmgredit5.tar
 

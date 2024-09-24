@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jontrulson/motif.git
+	branch = main
+	commit = 2af1d1aa607340cb000979ff5cf7ff4774feb745
+	parent = 710dd10acb134508b38db88c439365e2aaa13e4e
+	method = merge
+	cmdver = 0.4.5

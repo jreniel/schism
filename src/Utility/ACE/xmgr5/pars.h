@@ -1,19 +1,20 @@
-/* A Bison parser, made by GNU Bison 2.7.  */
+/* A Bison parser, made by GNU Bison 3.7.4.  */
 
 /* Bison interface for Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2012 Free Software Foundation, Inc.
-   
+
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
+   Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
@@ -26,13 +27,17 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
+
 #ifndef YY_YY_Y_TAB_H_INCLUDED
 # define YY_YY_Y_TAB_H_INCLUDED
-/* Enabling traces.  */
+/* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
 #endif
@@ -40,419 +45,427 @@
 extern int yydebug;
 #endif
 
-/* Tokens.  */
+/* Token kinds.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     ABS = 258,
-     ACOS = 259,
-     ALL = 260,
-     ASIN = 261,
-     ATAN = 262,
-     ATAN2 = 263,
-     CEIL = 264,
-     COS = 265,
-     DEG = 266,
-     DX = 267,
-     DY = 268,
-     ERF = 269,
-     ERFC = 270,
-     EXP = 271,
-     FLOOR = 272,
-     HYPOT = 273,
-     INDEX = 274,
-     INT = 275,
-     INVN = 276,
-     INVT = 277,
-     IRAND = 278,
-     LGAMMA = 279,
-     LN = 280,
-     LOG = 281,
-     LOGISTIC = 282,
-     MAXP = 283,
-     MINP = 284,
-     MOD = 285,
-     NORM = 286,
-     NORMP = 287,
-     PI = 288,
-     RAD = 289,
-     RAND = 290,
-     RNORM = 291,
-     SETNO = 292,
-     SIN = 293,
-     SQR = 294,
-     SQRT = 295,
-     TAN = 296,
-     INUM = 297,
-     CTD = 298,
-     ADP = 299,
-     TPC = 300,
-     VX1 = 301,
-     VX2 = 302,
-     VY1 = 303,
-     VY2 = 304,
-     WX1 = 305,
-     WX2 = 306,
-     WY1 = 307,
-     WY2 = 308,
-     DELAYP = 309,
-     DOUBLEBUFFER = 310,
-     DOWN = 311,
-     ABSOLUTE = 312,
-     ABORT = 313,
-     ACTIVATE = 314,
-     ACTIVE = 315,
-     ALT = 316,
-     ALTERNATE = 317,
-     ALTXAXIS = 318,
-     ALTYAXIS = 319,
-     ANGLE = 320,
-     ANNOTATE = 321,
-     APPEND = 322,
-     AREA = 323,
-     ARROW = 324,
-     AUTO = 325,
-     AUTOSCALE = 326,
-     AUTOTICKS = 327,
-     AVG = 328,
-     AXIS = 329,
-     AXES = 330,
-     BACKBUFFER = 331,
-     BACKGROUND = 332,
-     BAR = 333,
-     BATCH = 334,
-     BLOCK = 335,
-     BIN = 336,
-     BOTH = 337,
-     BOTTOM = 338,
-     BOX = 339,
-     BOXPLOT = 340,
-     BP = 341,
-     CD = 342,
-     CELLS = 343,
-     CENTER = 344,
-     CHAR = 345,
-     CHRSTR = 346,
-     CLEAR = 347,
-     CLICK = 348,
-     CMAP = 349,
-     COLOR = 350,
-     COMMENT = 351,
-     COPY = 352,
-     CORIE = 353,
-     CYCLE = 354,
-     DB = 355,
-     DECIMAL = 356,
-     DEF = 357,
-     DEFAULT = 358,
-     DELETE = 359,
-     DEVICE = 360,
-     DFT = 361,
-     DIFFERENCE = 362,
-     DISK = 363,
-     DRAW2 = 364,
-     DROP = 365,
-     DXDX = 366,
-     DXP = 367,
-     DYDY = 368,
-     DYP = 369,
-     ECHO = 370,
-     EDIT = 371,
-     ELSE = 372,
-     END = 373,
-     ERRORBAR = 374,
-     EXIT = 375,
-     EXPONENTIAL = 376,
-     FALSEP = 377,
-     FFT = 378,
-     FILEP = 379,
-     FILL = 380,
-     FIND = 381,
-     FIXEDPOINT = 382,
-     FLUSH = 383,
-     FOCUS = 384,
-     FOLLOWS = 385,
-     FONTP = 386,
-     FOREGROUND = 387,
-     FORMAT = 388,
-     FRONTBUFFER = 389,
-     FRAMEP = 390,
-     GETP = 391,
-     GIFL = 392,
-     GIFP = 393,
-     GRAPH = 394,
-     GRAPHNO = 395,
-     GRAPHS = 396,
-     GRAPHTYPE = 397,
-     GRID = 398,
-     HARDCOPY = 399,
-     HBAR = 400,
-     HBOXPLOT = 401,
-     HGAP = 402,
-     HIDDEN = 403,
-     HORIZONTAL = 404,
-     HISTO = 405,
-     IF = 406,
-     IGNORE = 407,
-     IHL = 408,
-     IMAGE = 409,
-     IN = 410,
-     INIT = 411,
-     INITGRAPHICS = 412,
-     INOUT = 413,
-     INTEGRATE = 414,
-     INTERP = 415,
-     INVDFT = 416,
-     INVFFT = 417,
-     ISOLINE = 418,
-     ISOLINES = 419,
-     JUST = 420,
-     KILL = 421,
-     LABEL = 422,
-     LAYOUT = 423,
-     LEAVE = 424,
-     LEAVEGRAPHICS = 425,
-     LEFT = 426,
-     LEGEND = 427,
-     LENGTH = 428,
-     LEVEL = 429,
-     LEVELS = 430,
-     LINE = 431,
-     LINESTYLE = 432,
-     LINETO = 433,
-     LINEWIDTH = 434,
-     LINK = 435,
-     LOAD = 436,
-     LOCATOR = 437,
-     LOCTYPE = 438,
-     LOGX = 439,
-     LOGY = 440,
-     LOGXY = 441,
-     MAJOR = 442,
-     MIFL = 443,
-     MIFP = 444,
-     MINOR = 445,
-     MISSINGP = 446,
-     MONITOR = 447,
-     MOVE = 448,
-     MOVE2 = 449,
-     MOVETO = 450,
-     NEGATE = 451,
-     NO = 452,
-     NONE = 453,
-     NORMAL = 454,
-     NXY = 455,
-     OFF = 456,
-     OFFSETX = 457,
-     OFFSETY = 458,
-     ON = 459,
-     OP = 460,
-     ORIENT = 461,
-     OUT = 462,
-     PAGE = 463,
-     PARA = 464,
-     PARALLEL = 465,
-     PARAMETERS = 466,
-     PARAMS = 467,
-     PATTERN = 468,
-     PERIMETER = 469,
-     PERP = 470,
-     PERPENDICULAR = 471,
-     PIE = 472,
-     PIPE = 473,
-     PLACE = 474,
-     POINT = 475,
-     POLAR = 476,
-     POWER = 477,
-     PREC = 478,
-     PREPEND = 479,
-     PRINT = 480,
-     PS = 481,
-     PSCOLORP = 482,
-     PSMONOP = 483,
-     PSCOLORL = 484,
-     PSMONOL = 485,
-     PUSH = 486,
-     POP = 487,
-     PUTP = 488,
-     READ = 489,
-     REDRAW = 490,
-     REGRESS = 491,
-     REGNUM = 492,
-     REGIONS = 493,
-     RENDER = 494,
-     REVERSE = 495,
-     RIGHT = 496,
-     RISER = 497,
-     ROT = 498,
-     RUNAVG = 499,
-     RUNMED = 500,
-     RUNSTD = 501,
-     RUNMIN = 502,
-     RUNMAX = 503,
-     SAMPLE = 504,
-     SAVEALL = 505,
-     SCALE = 506,
-     SCIENTIFIC = 507,
-     SET = 508,
-     SETNUM = 509,
-     SETS = 510,
-     SIGN = 511,
-     SIZE = 512,
-     SKIP = 513,
-     SLEEP = 514,
-     SLICE = 515,
-     SOURCE = 516,
-     SPEC = 517,
-     SPECIFIED = 518,
-     SPECTRUM = 519,
-     STACK = 520,
-     STACKEDBAR = 521,
-     STACKEDHBAR = 522,
-     STACKEDLINE = 523,
-     STAGGER = 524,
-     START = 525,
-     STARTTYPE = 526,
-     STATUS = 527,
-     STEP = 528,
-     STOP = 529,
-     STRING = 530,
-     SUBTITLE = 531,
-     SWAPBUFFER = 532,
-     SYMBOL = 533,
-     TICKP = 534,
-     TICKLABEL = 535,
-     TICKMARKS = 536,
-     TITLE = 537,
-     TO = 538,
-     TOP = 539,
-     TRUEP = 540,
-     TYPE = 541,
-     UP = 542,
-     VELOCITY = 543,
-     VERTICAL = 544,
-     VGAP = 545,
-     VIEW = 546,
-     WITH = 547,
-     WORLD = 548,
-     WRITE = 549,
-     X = 550,
-     X0 = 551,
-     X1 = 552,
-     XAXES = 553,
-     XAXIS = 554,
-     XCOR = 555,
-     XMAX = 556,
-     XMIN = 557,
-     FEGRID = 558,
-     RECTGRID = 559,
-     XY = 560,
-     XYARC = 561,
-     XYBOX = 562,
-     XYBOXPLOT = 563,
-     XYFIXED = 564,
-     XYHILO = 565,
-     XYRT = 566,
-     XYSEG = 567,
-     XYSTRING = 568,
-     XYDX = 569,
-     XYDY = 570,
-     XYDXDX = 571,
-     XYDYDY = 572,
-     XYDXDY = 573,
-     XYX2Y2 = 574,
-     XYXX = 575,
-     XYYY = 576,
-     XYZ = 577,
-     XYZW = 578,
-     XYUV = 579,
-     Y = 580,
-     Y0 = 581,
-     Y1 = 582,
-     Y2 = 583,
-     Y3 = 584,
-     Y4 = 585,
-     Y5 = 586,
-     YAXES = 587,
-     YAXIS = 588,
-     YES = 589,
-     YMAX = 590,
-     YMIN = 591,
-     ZEROXAXIS = 592,
-     ZEROYAXIS = 593,
-     ABOVE = 594,
-     BELOW = 595,
-     POLYI = 596,
-     POLYO = 597,
-     GENERAL = 598,
-     DDMMYY = 599,
-     MMDDYY = 600,
-     MMYY = 601,
-     MMDD = 602,
-     MONTHDAY = 603,
-     DAYMONTH = 604,
-     MONTHS = 605,
-     MONTHL = 606,
-     DDMONTHSYYHHMMSS = 607,
-     DDMONTHSYY = 608,
-     DAYOFWEEKS = 609,
-     DAYOFWEEKL = 610,
-     DAYOFYEAR = 611,
-     HMS = 612,
-     HH = 613,
-     MMDDHMS = 614,
-     MMDDYYHMS = 615,
-     DEGREESLON = 616,
-     DEGREESMMLON = 617,
-     DEGREESMMSSLON = 618,
-     MMSSLON = 619,
-     DEGREESLAT = 620,
-     DEGREESMMLAT = 621,
-     DEGREESMMSSLAT = 622,
-     MMSSLAT = 623,
-     DOT = 624,
-     STAR = 625,
-     PLUS = 626,
-     CROSS = 627,
-     CIRCLE = 628,
-     SQUARE = 629,
-     DIAMOND = 630,
-     TRIANGLE1 = 631,
-     TRIANGLE2 = 632,
-     TRIANGLE3 = 633,
-     TRIANGLE4 = 634,
-     SPLINE = 635,
-     LANDSCAPE = 636,
-     PORTRAIT = 637,
-     FREE = 638,
-     FIXED = 639,
-     STATUSBAR = 640,
-     LOCATORBAR = 641,
-     TOOLBAR = 642,
-     ELCIRC = 643,
-     SCALAR = 644,
-     VECTOR = 645,
-     HEAT = 646,
-     HISTORY = 647,
-     PROFILE = 648,
-     NODE = 649,
-     VAR = 650,
-     NUMBER = 651,
-     OR = 652,
-     AND = 653,
-     NE = 654,
-     EQ = 655,
-     GE = 656,
-     LE = 657,
-     LT = 658,
-     GT = 659,
-     NOT = 660,
-     UMINUS = 661
-   };
+  enum yytokentype
+  {
+    YYEMPTY = -2,
+    YYEOF = 0,                     /* "end of file"  */
+    YYerror = 256,                 /* error  */
+    YYUNDEF = 257,                 /* "invalid token"  */
+    ABS = 258,                     /* ABS  */
+    ACOS = 259,                    /* ACOS  */
+    ALL = 260,                     /* ALL  */
+    ASIN = 261,                    /* ASIN  */
+    ATAN = 262,                    /* ATAN  */
+    ATAN2 = 263,                   /* ATAN2  */
+    CEIL = 264,                    /* CEIL  */
+    COS = 265,                     /* COS  */
+    DEG = 266,                     /* DEG  */
+    DX = 267,                      /* DX  */
+    DY = 268,                      /* DY  */
+    ERF = 269,                     /* ERF  */
+    ERFC = 270,                    /* ERFC  */
+    EXP = 271,                     /* EXP  */
+    FLOOR = 272,                   /* FLOOR  */
+    HYPOT = 273,                   /* HYPOT  */
+    INDEX = 274,                   /* INDEX  */
+    INT = 275,                     /* INT  */
+    INVN = 276,                    /* INVN  */
+    INVT = 277,                    /* INVT  */
+    IRAND = 278,                   /* IRAND  */
+    LGAMMA = 279,                  /* LGAMMA  */
+    LN = 280,                      /* LN  */
+    LOG = 281,                     /* LOG  */
+    LOGISTIC = 282,                /* LOGISTIC  */
+    MAXP = 283,                    /* MAXP  */
+    MINP = 284,                    /* MINP  */
+    MOD = 285,                     /* MOD  */
+    NORM = 286,                    /* NORM  */
+    NORMP = 287,                   /* NORMP  */
+    PI = 288,                      /* PI  */
+    RAD = 289,                     /* RAD  */
+    RAND = 290,                    /* RAND  */
+    RNORM = 291,                   /* RNORM  */
+    SETNO = 292,                   /* SETNO  */
+    SIN = 293,                     /* SIN  */
+    SQR = 294,                     /* SQR  */
+    SQRT = 295,                    /* SQRT  */
+    TAN = 296,                     /* TAN  */
+    INUM = 297,                    /* INUM  */
+    CTD = 298,                     /* CTD  */
+    ADP = 299,                     /* ADP  */
+    TPC = 300,                     /* TPC  */
+    VX1 = 301,                     /* VX1  */
+    VX2 = 302,                     /* VX2  */
+    VY1 = 303,                     /* VY1  */
+    VY2 = 304,                     /* VY2  */
+    WX1 = 305,                     /* WX1  */
+    WX2 = 306,                     /* WX2  */
+    WY1 = 307,                     /* WY1  */
+    WY2 = 308,                     /* WY2  */
+    DELAYP = 309,                  /* DELAYP  */
+    DOUBLEBUFFER = 310,            /* DOUBLEBUFFER  */
+    DOWN = 311,                    /* DOWN  */
+    ABSOLUTE = 312,                /* ABSOLUTE  */
+    ABORT = 313,                   /* ABORT  */
+    ACTIVATE = 314,                /* ACTIVATE  */
+    ACTIVE = 315,                  /* ACTIVE  */
+    ALT = 316,                     /* ALT  */
+    ALTERNATE = 317,               /* ALTERNATE  */
+    ALTXAXIS = 318,                /* ALTXAXIS  */
+    ALTYAXIS = 319,                /* ALTYAXIS  */
+    ANGLE = 320,                   /* ANGLE  */
+    ANNOTATE = 321,                /* ANNOTATE  */
+    APPEND = 322,                  /* APPEND  */
+    AREA = 323,                    /* AREA  */
+    ARROW = 324,                   /* ARROW  */
+    AUTO = 325,                    /* AUTO  */
+    AUTOSCALE = 326,               /* AUTOSCALE  */
+    AUTOTICKS = 327,               /* AUTOTICKS  */
+    AVG = 328,                     /* AVG  */
+    AXIS = 329,                    /* AXIS  */
+    AXES = 330,                    /* AXES  */
+    BACKBUFFER = 331,              /* BACKBUFFER  */
+    BACKGROUND = 332,              /* BACKGROUND  */
+    BAR = 333,                     /* BAR  */
+    BATCH = 334,                   /* BATCH  */
+    BLOCK = 335,                   /* BLOCK  */
+    BIN = 336,                     /* BIN  */
+    BOTH = 337,                    /* BOTH  */
+    BOTTOM = 338,                  /* BOTTOM  */
+    BOX = 339,                     /* BOX  */
+    BOXPLOT = 340,                 /* BOXPLOT  */
+    BP = 341,                      /* BP  */
+    CD = 342,                      /* CD  */
+    CELLS = 343,                   /* CELLS  */
+    CENTER = 344,                  /* CENTER  */
+    CHAR = 345,                    /* CHAR  */
+    CHRSTR = 346,                  /* CHRSTR  */
+    CLEAR = 347,                   /* CLEAR  */
+    CLICK = 348,                   /* CLICK  */
+    CMAP = 349,                    /* CMAP  */
+    COLOR = 350,                   /* COLOR  */
+    COMMENT = 351,                 /* COMMENT  */
+    COPY = 352,                    /* COPY  */
+    CORIE = 353,                   /* CORIE  */
+    CYCLE = 354,                   /* CYCLE  */
+    DB = 355,                      /* DB  */
+    DECIMAL = 356,                 /* DECIMAL  */
+    DEF = 357,                     /* DEF  */
+    DEFAULT = 358,                 /* DEFAULT  */
+    DELETE = 359,                  /* DELETE  */
+    DEVICE = 360,                  /* DEVICE  */
+    DFT = 361,                     /* DFT  */
+    DIFFERENCE = 362,              /* DIFFERENCE  */
+    DISK = 363,                    /* DISK  */
+    DRAW2 = 364,                   /* DRAW2  */
+    DROP = 365,                    /* DROP  */
+    DXDX = 366,                    /* DXDX  */
+    DXP = 367,                     /* DXP  */
+    DYDY = 368,                    /* DYDY  */
+    DYP = 369,                     /* DYP  */
+    ECHO = 370,                    /* ECHO  */
+    EDIT = 371,                    /* EDIT  */
+    ELSE = 372,                    /* ELSE  */
+    END = 373,                     /* END  */
+    ERRORBAR = 374,                /* ERRORBAR  */
+    EXIT = 375,                    /* EXIT  */
+    EXPONENTIAL = 376,             /* EXPONENTIAL  */
+    FALSEP = 377,                  /* FALSEP  */
+    FFT = 378,                     /* FFT  */
+    FILEP = 379,                   /* FILEP  */
+    FILL = 380,                    /* FILL  */
+    FIND = 381,                    /* FIND  */
+    FIXEDPOINT = 382,              /* FIXEDPOINT  */
+    FLUSH = 383,                   /* FLUSH  */
+    FOCUS = 384,                   /* FOCUS  */
+    FOLLOWS = 385,                 /* FOLLOWS  */
+    FONTP = 386,                   /* FONTP  */
+    FOREGROUND = 387,              /* FOREGROUND  */
+    FORMAT = 388,                  /* FORMAT  */
+    FRONTBUFFER = 389,             /* FRONTBUFFER  */
+    FRAMEP = 390,                  /* FRAMEP  */
+    GETP = 391,                    /* GETP  */
+    GIFL = 392,                    /* GIFL  */
+    GIFP = 393,                    /* GIFP  */
+    GRAPH = 394,                   /* GRAPH  */
+    GRAPHNO = 395,                 /* GRAPHNO  */
+    GRAPHS = 396,                  /* GRAPHS  */
+    GRAPHTYPE = 397,               /* GRAPHTYPE  */
+    GRID = 398,                    /* GRID  */
+    HARDCOPY = 399,                /* HARDCOPY  */
+    HBAR = 400,                    /* HBAR  */
+    HBOXPLOT = 401,                /* HBOXPLOT  */
+    HGAP = 402,                    /* HGAP  */
+    HIDDEN = 403,                  /* HIDDEN  */
+    HORIZONTAL = 404,              /* HORIZONTAL  */
+    HISTO = 405,                   /* HISTO  */
+    IF = 406,                      /* IF  */
+    IGNORE = 407,                  /* IGNORE  */
+    IHL = 408,                     /* IHL  */
+    IMAGE = 409,                   /* IMAGE  */
+    IN = 410,                      /* IN  */
+    INIT = 411,                    /* INIT  */
+    INITGRAPHICS = 412,            /* INITGRAPHICS  */
+    INOUT = 413,                   /* INOUT  */
+    INTEGRATE = 414,               /* INTEGRATE  */
+    INTERP = 415,                  /* INTERP  */
+    INVDFT = 416,                  /* INVDFT  */
+    INVFFT = 417,                  /* INVFFT  */
+    ISOLINE = 418,                 /* ISOLINE  */
+    ISOLINES = 419,                /* ISOLINES  */
+    JUST = 420,                    /* JUST  */
+    KILL = 421,                    /* KILL  */
+    LABEL = 422,                   /* LABEL  */
+    LAYOUT = 423,                  /* LAYOUT  */
+    LEAVE = 424,                   /* LEAVE  */
+    LEAVEGRAPHICS = 425,           /* LEAVEGRAPHICS  */
+    LEFT = 426,                    /* LEFT  */
+    LEGEND = 427,                  /* LEGEND  */
+    LENGTH = 428,                  /* LENGTH  */
+    LEVEL = 429,                   /* LEVEL  */
+    LEVELS = 430,                  /* LEVELS  */
+    LINE = 431,                    /* LINE  */
+    LINESTYLE = 432,               /* LINESTYLE  */
+    LINETO = 433,                  /* LINETO  */
+    LINEWIDTH = 434,               /* LINEWIDTH  */
+    LINK = 435,                    /* LINK  */
+    LOAD = 436,                    /* LOAD  */
+    LOCATOR = 437,                 /* LOCATOR  */
+    LOCTYPE = 438,                 /* LOCTYPE  */
+    LOGX = 439,                    /* LOGX  */
+    LOGY = 440,                    /* LOGY  */
+    LOGXY = 441,                   /* LOGXY  */
+    MAJOR = 442,                   /* MAJOR  */
+    MIFL = 443,                    /* MIFL  */
+    MIFP = 444,                    /* MIFP  */
+    MINOR = 445,                   /* MINOR  */
+    MISSINGP = 446,                /* MISSINGP  */
+    MONITOR = 447,                 /* MONITOR  */
+    MOVE = 448,                    /* MOVE  */
+    MOVE2 = 449,                   /* MOVE2  */
+    MOVETO = 450,                  /* MOVETO  */
+    NEGATE = 451,                  /* NEGATE  */
+    NO = 452,                      /* NO  */
+    NONE = 453,                    /* NONE  */
+    NORMAL = 454,                  /* NORMAL  */
+    NXY = 455,                     /* NXY  */
+    OFF = 456,                     /* OFF  */
+    OFFSETX = 457,                 /* OFFSETX  */
+    OFFSETY = 458,                 /* OFFSETY  */
+    ON = 459,                      /* ON  */
+    OP = 460,                      /* OP  */
+    ORIENT = 461,                  /* ORIENT  */
+    OUT = 462,                     /* OUT  */
+    PAGE = 463,                    /* PAGE  */
+    PARA = 464,                    /* PARA  */
+    PARALLEL = 465,                /* PARALLEL  */
+    PARAMETERS = 466,              /* PARAMETERS  */
+    PARAMS = 467,                  /* PARAMS  */
+    PATTERN = 468,                 /* PATTERN  */
+    PERIMETER = 469,               /* PERIMETER  */
+    PERP = 470,                    /* PERP  */
+    PERPENDICULAR = 471,           /* PERPENDICULAR  */
+    PIE = 472,                     /* PIE  */
+    PIPE = 473,                    /* PIPE  */
+    PLACE = 474,                   /* PLACE  */
+    POINT = 475,                   /* POINT  */
+    POLAR = 476,                   /* POLAR  */
+    POWER = 477,                   /* POWER  */
+    PREC = 478,                    /* PREC  */
+    PREPEND = 479,                 /* PREPEND  */
+    PRINT = 480,                   /* PRINT  */
+    PS = 481,                      /* PS  */
+    PSCOLORP = 482,                /* PSCOLORP  */
+    PSMONOP = 483,                 /* PSMONOP  */
+    PSCOLORL = 484,                /* PSCOLORL  */
+    PSMONOL = 485,                 /* PSMONOL  */
+    PUSH = 486,                    /* PUSH  */
+    POP = 487,                     /* POP  */
+    PUTP = 488,                    /* PUTP  */
+    READ = 489,                    /* READ  */
+    REDRAW = 490,                  /* REDRAW  */
+    REGRESS = 491,                 /* REGRESS  */
+    REGNUM = 492,                  /* REGNUM  */
+    REGIONS = 493,                 /* REGIONS  */
+    RENDER = 494,                  /* RENDER  */
+    REVERSE = 495,                 /* REVERSE  */
+    RIGHT = 496,                   /* RIGHT  */
+    RISER = 497,                   /* RISER  */
+    ROT = 498,                     /* ROT  */
+    RUNAVG = 499,                  /* RUNAVG  */
+    RUNMED = 500,                  /* RUNMED  */
+    RUNSTD = 501,                  /* RUNSTD  */
+    RUNMIN = 502,                  /* RUNMIN  */
+    RUNMAX = 503,                  /* RUNMAX  */
+    SAMPLE = 504,                  /* SAMPLE  */
+    SAVEALL = 505,                 /* SAVEALL  */
+    SCALE = 506,                   /* SCALE  */
+    SCIENTIFIC = 507,              /* SCIENTIFIC  */
+    SET = 508,                     /* SET  */
+    SETNUM = 509,                  /* SETNUM  */
+    SETS = 510,                    /* SETS  */
+    SIGN = 511,                    /* SIGN  */
+    SIZE = 512,                    /* SIZE  */
+    SKIP = 513,                    /* SKIP  */
+    SLEEP = 514,                   /* SLEEP  */
+    SLICE = 515,                   /* SLICE  */
+    SOURCE = 516,                  /* SOURCE  */
+    SPEC = 517,                    /* SPEC  */
+    SPECIFIED = 518,               /* SPECIFIED  */
+    SPECTRUM = 519,                /* SPECTRUM  */
+    STACK = 520,                   /* STACK  */
+    STACKEDBAR = 521,              /* STACKEDBAR  */
+    STACKEDHBAR = 522,             /* STACKEDHBAR  */
+    STACKEDLINE = 523,             /* STACKEDLINE  */
+    STAGGER = 524,                 /* STAGGER  */
+    START = 525,                   /* START  */
+    STARTTYPE = 526,               /* STARTTYPE  */
+    STATUS = 527,                  /* STATUS  */
+    STEP = 528,                    /* STEP  */
+    STOP = 529,                    /* STOP  */
+    STRING = 530,                  /* STRING  */
+    SUBTITLE = 531,                /* SUBTITLE  */
+    SWAPBUFFER = 532,              /* SWAPBUFFER  */
+    SYMBOL = 533,                  /* SYMBOL  */
+    TICKP = 534,                   /* TICKP  */
+    TICKLABEL = 535,               /* TICKLABEL  */
+    TICKMARKS = 536,               /* TICKMARKS  */
+    TITLE = 537,                   /* TITLE  */
+    TO = 538,                      /* TO  */
+    TOP = 539,                     /* TOP  */
+    TRUEP = 540,                   /* TRUEP  */
+    TYPE = 541,                    /* TYPE  */
+    UP = 542,                      /* UP  */
+    VELOCITY = 543,                /* VELOCITY  */
+    VERTICAL = 544,                /* VERTICAL  */
+    VGAP = 545,                    /* VGAP  */
+    VIEW = 546,                    /* VIEW  */
+    WITH = 547,                    /* WITH  */
+    WORLD = 548,                   /* WORLD  */
+    WRITE = 549,                   /* WRITE  */
+    X = 550,                       /* X  */
+    X0 = 551,                      /* X0  */
+    X1 = 552,                      /* X1  */
+    XAXES = 553,                   /* XAXES  */
+    XAXIS = 554,                   /* XAXIS  */
+    XCOR = 555,                    /* XCOR  */
+    XMAX = 556,                    /* XMAX  */
+    XMIN = 557,                    /* XMIN  */
+    FEGRID = 558,                  /* FEGRID  */
+    RECTGRID = 559,                /* RECTGRID  */
+    XY = 560,                      /* XY  */
+    XYARC = 561,                   /* XYARC  */
+    XYBOX = 562,                   /* XYBOX  */
+    XYBOXPLOT = 563,               /* XYBOXPLOT  */
+    XYFIXED = 564,                 /* XYFIXED  */
+    XYHILO = 565,                  /* XYHILO  */
+    XYRT = 566,                    /* XYRT  */
+    XYSEG = 567,                   /* XYSEG  */
+    XYSTRING = 568,                /* XYSTRING  */
+    XYDX = 569,                    /* XYDX  */
+    XYDY = 570,                    /* XYDY  */
+    XYDXDX = 571,                  /* XYDXDX  */
+    XYDYDY = 572,                  /* XYDYDY  */
+    XYDXDY = 573,                  /* XYDXDY  */
+    XYX2Y2 = 574,                  /* XYX2Y2  */
+    XYXX = 575,                    /* XYXX  */
+    XYYY = 576,                    /* XYYY  */
+    XYZ = 577,                     /* XYZ  */
+    XYZW = 578,                    /* XYZW  */
+    XYUV = 579,                    /* XYUV  */
+    Y = 580,                       /* Y  */
+    Y0 = 581,                      /* Y0  */
+    Y1 = 582,                      /* Y1  */
+    Y2 = 583,                      /* Y2  */
+    Y3 = 584,                      /* Y3  */
+    Y4 = 585,                      /* Y4  */
+    Y5 = 586,                      /* Y5  */
+    YAXES = 587,                   /* YAXES  */
+    YAXIS = 588,                   /* YAXIS  */
+    YES = 589,                     /* YES  */
+    YMAX = 590,                    /* YMAX  */
+    YMIN = 591,                    /* YMIN  */
+    ZEROXAXIS = 592,               /* ZEROXAXIS  */
+    ZEROYAXIS = 593,               /* ZEROYAXIS  */
+    ABOVE = 594,                   /* ABOVE  */
+    BELOW = 595,                   /* BELOW  */
+    POLYI = 596,                   /* POLYI  */
+    POLYO = 597,                   /* POLYO  */
+    GENERAL = 598,                 /* GENERAL  */
+    DDMMYY = 599,                  /* DDMMYY  */
+    MMDDYY = 600,                  /* MMDDYY  */
+    MMYY = 601,                    /* MMYY  */
+    MMDD = 602,                    /* MMDD  */
+    MONTHDAY = 603,                /* MONTHDAY  */
+    DAYMONTH = 604,                /* DAYMONTH  */
+    MONTHS = 605,                  /* MONTHS  */
+    MONTHL = 606,                  /* MONTHL  */
+    DDMONTHSYYHHMMSS = 607,        /* DDMONTHSYYHHMMSS  */
+    DDMONTHSYY = 608,              /* DDMONTHSYY  */
+    DAYOFWEEKS = 609,              /* DAYOFWEEKS  */
+    DAYOFWEEKL = 610,              /* DAYOFWEEKL  */
+    DAYOFYEAR = 611,               /* DAYOFYEAR  */
+    HMS = 612,                     /* HMS  */
+    HH = 613,                      /* HH  */
+    MMDDHMS = 614,                 /* MMDDHMS  */
+    MMDDYYHMS = 615,               /* MMDDYYHMS  */
+    DEGREESLON = 616,              /* DEGREESLON  */
+    DEGREESMMLON = 617,            /* DEGREESMMLON  */
+    DEGREESMMSSLON = 618,          /* DEGREESMMSSLON  */
+    MMSSLON = 619,                 /* MMSSLON  */
+    DEGREESLAT = 620,              /* DEGREESLAT  */
+    DEGREESMMLAT = 621,            /* DEGREESMMLAT  */
+    DEGREESMMSSLAT = 622,          /* DEGREESMMSSLAT  */
+    MMSSLAT = 623,                 /* MMSSLAT  */
+    DOT = 624,                     /* DOT  */
+    STAR = 625,                    /* STAR  */
+    PLUS = 626,                    /* PLUS  */
+    CROSS = 627,                   /* CROSS  */
+    CIRCLE = 628,                  /* CIRCLE  */
+    SQUARE = 629,                  /* SQUARE  */
+    DIAMOND = 630,                 /* DIAMOND  */
+    TRIANGLE1 = 631,               /* TRIANGLE1  */
+    TRIANGLE2 = 632,               /* TRIANGLE2  */
+    TRIANGLE3 = 633,               /* TRIANGLE3  */
+    TRIANGLE4 = 634,               /* TRIANGLE4  */
+    SPLINE = 635,                  /* SPLINE  */
+    LANDSCAPE = 636,               /* LANDSCAPE  */
+    PORTRAIT = 637,                /* PORTRAIT  */
+    FREE = 638,                    /* FREE  */
+    FIXED = 639,                   /* FIXED  */
+    STATUSBAR = 640,               /* STATUSBAR  */
+    LOCATORBAR = 641,              /* LOCATORBAR  */
+    TOOLBAR = 642,                 /* TOOLBAR  */
+    ELCIRC = 643,                  /* ELCIRC  */
+    SCALAR = 644,                  /* SCALAR  */
+    VECTOR = 645,                  /* VECTOR  */
+    HEAT = 646,                    /* HEAT  */
+    HISTORY = 647,                 /* HISTORY  */
+    PROFILE = 648,                 /* PROFILE  */
+    NODE = 649,                    /* NODE  */
+    VAR = 650,                     /* VAR  */
+    NUMBER = 651,                  /* NUMBER  */
+    OR = 652,                      /* OR  */
+    AND = 653,                     /* AND  */
+    GT = 654,                      /* GT  */
+    LT = 655,                      /* LT  */
+    LE = 656,                      /* LE  */
+    GE = 657,                      /* GE  */
+    EQ = 658,                      /* EQ  */
+    NE = 659,                      /* NE  */
+    UMINUS = 660,                  /* UMINUS  */
+    NOT = 661                      /* NOT  */
+  };
+  typedef enum yytokentype yytoken_kind_t;
 #endif
-/* Tokens.  */
+/* Token kinds.  */
+#define YYEMPTY -2
+#define YYEOF 0
+#define YYerror 256
+#define YYUNDEF 257
 #define ABS 258
 #define ACOS 259
 #define ALL 260
@@ -849,21 +862,19 @@ extern int yydebug;
 #define NUMBER 651
 #define OR 652
 #define AND 653
-#define NE 654
-#define EQ 655
-#define GE 656
-#define LE 657
-#define LT 658
-#define GT 659
-#define NOT 660
-#define UMINUS 661
+#define GT 654
+#define LT 655
+#define LE 656
+#define GE 657
+#define EQ 658
+#define NE 659
+#define UMINUS 660
+#define NOT 661
 
-
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
+union YYSTYPE
 {
-/* Line 2058 of yacc.c  */
 #line 77 "pars.y"
 
     double val;
@@ -873,29 +884,17 @@ typedef union YYSTYPE
     long pset;
     char *str;
 
+#line 888 "y.tab.h"
 
-/* Line 2058 of yacc.c  */
-#line 879 "y.tab.h"
-} YYSTYPE;
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
+
 extern YYSTYPE yylval;
 
-#ifdef YYPARSE_PARAM
-#if defined __STDC__ || defined __cplusplus
-int yyparse (void *YYPARSE_PARAM);
-#else
-int yyparse ();
-#endif
-#else /* ! YYPARSE_PARAM */
-#if defined __STDC__ || defined __cplusplus
 int yyparse (void);
-#else
-int yyparse ();
-#endif
-#endif /* ! YYPARSE_PARAM */
 
 #endif /* !YY_YY_Y_TAB_H_INCLUDED  */

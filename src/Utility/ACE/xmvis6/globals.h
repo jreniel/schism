@@ -158,7 +158,7 @@ int curadcirc;
 int curadcircem;
 int curadc3dvm;
 int curadc3dem;
-int curadc3d;
+extern int curadc3d;
 int curadc3dcnc;
 int curela;
 int curelaem;
